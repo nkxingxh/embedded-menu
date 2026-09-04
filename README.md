@@ -12,6 +12,10 @@
 
 ![emu](https://storage.moegirl.org.cn/moegirl/commons/b/ba/Wonderhoy.png!/fw/99?v=20211025164238)
 
+## 入门
+
+在开始之前, 建议您完整阅读当前 README 文档, 并完整查看[例程](/examples/simple_menu.ino)。
+
 ## 接口
 
 该库主要提供了两个类，分别为菜单导航类 `MenuNavigator` 与菜单项目类 `MenuItem`。
