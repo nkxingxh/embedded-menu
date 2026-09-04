@@ -1,0 +1,8 @@
+MenuItem        KEYWORD1
+MenuNavigator   KEYWORD1
+begin           KEYWORD2
+draw            KEYWORD2
+move            KEYWORD2
+enter           KEYWORD2
+back            KEYWORD2
+select          KEYWORD2
