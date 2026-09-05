@@ -20,7 +20,7 @@
 // 屏幕配置与实例化 u8g2
 #define DISPLAY_OLED_SDA 5  // 屏幕数据引脚
 #define DISPLAY_OLED_SCL 4  // 屏幕时钟引脚
-U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2;   // 此处使用硬件 I2C 的定义
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, U8X8_PIN_NONE);   // 此处使用硬件 I2C 的定义
 
 
 // 前向声明回调函数
@@ -55,9 +55,10 @@ void setup() {
     // 初始化串口
     Serial.begin(115200);
 
-    // 初始化 u8g2
-    // 这里使用硬件 IIC
+    // 初始化 IIC
     Wire.begin(DISPLAY_OLED_SDA, DISPLAY_OLED_SCL);
+
+    // 初始化 u8g2
     u8g2.begin();   // u8g2 会直接使用硬件IIC
     u8g2.enableUTF8Print(); // 启用 UTF8 支持以显示中文
     
