@@ -189,6 +189,10 @@ bool loadingCallback(MenuItem* target, MenuItem* current) {
         target->items.emplace_back(String("第") + String(i) + String("项"));
     }
 
+    // 刚才弹了一个 msgBox, 我们只希望其作为加载中提示, 所以这里要手动 back() 掉
+    // 这里把 needDraw 参数设置为 false, 表示不需要立刻绘制, 因为稍后返回 true 后, 进入子菜单时会进行绘制
+    nav.back(false);
+
     // 依旧是记得返回
     return true;
 }
@@ -211,7 +215,8 @@ bool listMemberCallback(MenuItem* target, MenuItem* current) {
     // 这里示例所以弹个 msgBox 出来
     nav.showMsgBox(MenuItem("提示", {
         MenuItem("你选中了第"),
-        MenuItem(String(selected)),
+        // 索引从 0 开始, 所以这里加 1, 让显示值从 1 开始
+        MenuItem(String(selected + 1)),
         MenuItem("项")
     }));
 
